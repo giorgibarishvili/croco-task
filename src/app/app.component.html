@@ -1,1 +1,19 @@
-<router-outlet></router-outlet>
+<div class="page">
+  <header class="header">
+      <span routerLink="users">CrocoTask</span>
+      <span>{{ currentDate | date : 'short' }}</span>
+  </header>
+  <nav>
+      <p-button [link]="true" routerLink="users">
+          Users
+      </p-button>
+      <p-button [link]="true" routerLink="posts">
+          Posts
+      </p-button>
+  </nav>
+  
+  <div class="content">
+    <router-outlet></router-outlet>
+  </div>
+  <footer></footer>
+</div>
