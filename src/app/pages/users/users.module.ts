@@ -5,10 +5,11 @@ import { UsersRoutingModule } from './users-routing.module';
 import { TableModule } from 'primeng/table';
 import { UserServiceService } from './services/user-service.service';
 import { UsernamePipe } from './pipes/username.pipe';
+import { ButtonModule } from 'primeng/button';
 
 @NgModule({
   declarations: [UsersComponent, UsernamePipe],
-  imports: [CommonModule, UsersRoutingModule, TableModule],
+  imports: [CommonModule, UsersRoutingModule, TableModule, ButtonModule],
   providers: [UserServiceService],
 })
 export class UsersModule {}
