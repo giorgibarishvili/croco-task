@@ -10,11 +10,19 @@ import { Router } from '@angular/router';
 export class UsersComponent {
   users$ = this.userService.getUsers();
 
-  constructor(private userService: UserServiceService, private router: Router) { }
+  constructor(
+    private userService: UserServiceService,
+    private router: Router
+  ) {}
 
   public onPostsView(userId: number): void {
     this.router.navigate(['posts'], {
-      queryParams: { userId }
-    })
+      queryParams: { userId },
+    });
+  }
+  public onTodoView(userId: number): void {
+    this.router.navigate(['todo'], {
+      queryParams: { userId },
+    });
   }
 }

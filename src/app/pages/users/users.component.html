@@ -17,9 +17,12 @@
                 <td>{{ user.phone }}</td>
                 <td>{{ user.email }}</td>
                 <td>{{ user.company?.name }}</td>
-                <td>
+                <td class="flex">
                     <p-button class="btn" (click)="onPostsView(user.id)">
                         Posts
+                    </p-button>
+                    <p-button class="btn" (click)="onTodoView(user.id)">
+                        To-do
                     </p-button>
                 </td>
             </tr>

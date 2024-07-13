@@ -16,6 +16,10 @@ const routes: Routes = [
     loadChildren: () => import('./pages/posts/posts.module').then(m => m.PostsModule)
   },
   {
+    path: 'todo',
+    loadChildren: () => import('./pages/todo/todo.module').then(m => m.TodoModule)
+  },
+  {
     path: '**',
     redirectTo: 'users'
   }
