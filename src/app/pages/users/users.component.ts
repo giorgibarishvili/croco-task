@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { UserServiceService } from './services/user-service.service';
 import { Router } from '@angular/router';
 import { FormControl, FormGroup } from '@angular/forms';
-import { debounceTime, startWith, Subscription, switchMap, tap } from 'rxjs';
+import { debounceTime, startWith, switchMap } from 'rxjs';
 
 @Component({
   selector: 'app-users',
@@ -21,26 +21,11 @@ export class UsersComponent {
   users$ = this.filter$.pipe(
     switchMap((filter) => this.userService.getUsers(filter))
   );
-  subscription = new Subscription();
 
   constructor(
     private userService: UserServiceService,
     private router: Router
   ) {}
-
-  // ngOnInit() {
-  //   this.subscription.add(
-  //     this.form.valueChanges.subscribe(
-  //       value => {
-  //         console.log(value)
-  //       }
-  //     )
-  //   )
-  // }
-
-  // ngOnDestroy() {
-  //   this.subscription.unsubscribe()
-  // }
 
   public onPostsView(userId: number): void {
     this.router.navigate(['posts'], {
