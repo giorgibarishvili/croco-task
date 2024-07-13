@@ -1,13 +1,13 @@
 <div class="page">
   <header class="header">
-      <span routerLink="users">CrocoTask</span>
+      <span routerLink="/" routerLink="users" class="title-name">CrocoTask</span>
       <span>{{ currentDate | date : 'short' }}</span>
   </header>
   <nav>
-      <p-button [link]="true" routerLink="users">
+      <p-button [link]="true" routerLink="users" routerLinkActive="active-page">
           Users
       </p-button>
-      <p-button [link]="true" routerLink="posts">
+      <p-button [link]="true" routerLink="posts" routerLinkActive="active-page">
           Posts
       </p-button>
   </nav>
@@ -15,5 +15,5 @@
   <div class="content">
     <router-outlet></router-outlet>
   </div>
-  <footer></footer>
+  <footer>All rights reserved!!!</footer>
 </div>

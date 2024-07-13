@@ -1,5 +1,5 @@
 <div class="card" *ngIf="(users$ | async) as users">
-    <p-table [value]="users" [tableStyle]="{ 'min-width': '50rem' }">
+    <p-table   responsiveLayout="stack" [value]="users">
         <ng-template pTemplate="header">
             <tr>
                 <th>Firstname</th>
@@ -18,7 +18,7 @@
                 <td>{{ user.email }}</td>
                 <td>{{ user.company?.name }}</td>
                 <td>
-                    <p-button (click)="onPostsView(user.id)">
+                    <p-button class="btn" (click)="onPostsView(user.id)">
                         Posts
                     </p-button>
                 </td>

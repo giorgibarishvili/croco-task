@@ -1,7 +1,7 @@
 <div *ngIf="(posts$ | async) as posts" class="posts-container">
     <div *ngFor="let post of posts" >
-        <p-card [header]="post.title" [style]="{ width: '360px' }" class="card">
-            <p>
+        <p-card [header]="post.title" [style]="{ width: '240px' }" class="card">
+            <p class="card-text">
                 {{ post.body }}
             </p>
             <ng-template pTemplate="footer">
