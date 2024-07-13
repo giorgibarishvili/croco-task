@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { UserServiceService } from './services/user-service.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-users',
@@ -9,5 +10,11 @@ import { UserServiceService } from './services/user-service.service';
 export class UsersComponent {
   users$ = this.userService.getUsers();
 
-  constructor(private userService: UserServiceService) { }
+  constructor(private userService: UserServiceService, private router: Router) { }
+
+  public onPostsView(userId: number): void {
+    this.router.navigate(['posts'], {
+      queryParams: { userId }
+    })
+  }
 }

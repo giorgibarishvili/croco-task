@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { PostsService } from './services/posts.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
+import { map, switchMap } from 'rxjs';
 
 @Component({
   selector: 'app-posts',
@@ -8,7 +9,18 @@ import { Router } from '@angular/router';
   styleUrl: './posts.component.scss'
 })
 export class PostsComponent {
-  public posts$ = this.postsService.getPosts()
+  private userId$ = this.route.queryParams.pipe(
+    map((filter) => {
+      if(filter && filter['userId']) {
+        return filter['userId']
+      }
 
-  constructor(private postsService: PostsService, private route: Router) { }
+      return null
+    })
+  )
+  public posts$ = this.userId$.pipe(
+    switchMap((userId) => this.postsService.getPosts(userId))
+  )
+
+  constructor(private postsService: PostsService, private route: ActivatedRoute) { }
 }

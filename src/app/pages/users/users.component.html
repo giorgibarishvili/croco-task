@@ -18,7 +18,7 @@
                 <td>{{ user.email }}</td>
                 <td>{{ user.company?.name }}</td>
                 <td>
-                    <p-button>
+                    <p-button (click)="onPostsView(user.id)">
                         Posts
                     </p-button>
                 </td>
