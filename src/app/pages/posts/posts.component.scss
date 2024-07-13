@@ -1,0 +1,10 @@
+.posts-container {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    padding: 20px;
+
+    .card {
+        height: 380px
+    }
+}

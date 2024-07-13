@@ -9,8 +9,5 @@ import { UserServiceService } from './services/user-service.service';
 export class UsersComponent {
   users$ = this.userService.getUsers();
 
-  constructor(private userService: UserServiceService) {
-    // userService.getUsers()
-    // .subscribe(e => console.log(e))
-  }
+  constructor(private userService: UserServiceService) { }
 }
