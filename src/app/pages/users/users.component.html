@@ -1,4 +1,15 @@
 <div class="card" *ngIf="(users$ | async) as users">
+    <form class="search" [formGroup]="form">
+        <p-iconField iconPosition="left">
+            <p-inputIcon styleClass="pi pi-search" />
+            <input formControlName="email" type="text" pInputText placeholder="Search by email" />
+        </p-iconField>
+        <p-iconField iconPosition="left">
+            <p-inputIcon styleClass="pi pi-search" />
+            <input formControlName="name" type="text" pInputText placeholder="Search by first or lastname" />
+        </p-iconField>
+    </form>    
+
     <p-table   responsiveLayout="stack" [value]="users">
         <ng-template pTemplate="header">
             <tr>

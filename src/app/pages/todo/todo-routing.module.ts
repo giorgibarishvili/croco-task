@@ -7,7 +7,7 @@ const routes: Route[] = [
   {
     path:'',
     pathMatch: 'full',
-    component: TodoComponent
+    component: TodoComponent,
   }
 ]
 
