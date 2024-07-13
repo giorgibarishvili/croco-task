@@ -5,6 +5,7 @@ import { PostsRoutingModule } from './posts-routing.module';
 import { CardModule } from 'primeng/card';
 import { ButtonModule } from 'primeng/button';
 import { PostsService } from './services/posts.service';
+import { DialogModule } from 'primeng/dialog';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { PostsService } from './services/posts.service';
     CommonModule,
     PostsRoutingModule,
     CardModule,
-    ButtonModule
+    ButtonModule,
+    DialogModule
   ],
   providers: [PostsService]
 })

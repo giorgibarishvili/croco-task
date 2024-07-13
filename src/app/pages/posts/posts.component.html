@@ -5,8 +5,16 @@
                 {{ post.body }}
             </p>
             <ng-template pTemplate="footer">
-                <p-button label="Details" />
+                <p-button label="Details" (click)="dialogDetails = post" />
             </ng-template>
         </p-card>
     </div>
 </div>
+
+<p-dialog header="Post details" [modal]="true" [(visible)]="!!dialogDetails" [style]="{ width: '25rem' }">
+    <ng-container *ngIf="dialogDetails">
+        <h1>{{ dialogDetails.title }}</h1>
+        <p>{{  dialogDetails.body }}</p>
+        <p-button label="Close" (onClick)="dialogDetails = null" />
+    </ng-container>
+</p-dialog>
